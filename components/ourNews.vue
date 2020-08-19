@@ -4,10 +4,7 @@
     <div class="container">
       <div class="cards row">
         <div class="card col-sm col-md" style="width: 18rem;">
-          <img
-            src="https://www.spacex.com/sites/spacex/files/home_block_reusable.jpg"
-            class="card-img-top"
-          />
+          <img src="~/assets/img/news/NHQ.jpg" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p
@@ -17,10 +14,7 @@
           </div>
         </div>
         <div class="card col-sm col-md" style="width: 18rem;">
-          <img
-            src="https://www.spacex.com/sites/spacex/files/rideshare256x116.jpg"
-            class="card-img-top"
-          />
+          <img src="~/assets/img/news/prototype.jpg" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p
@@ -30,10 +24,7 @@
           </div>
         </div>
         <div class="card col-sm col-md" style="width: 18rem;">
-          <img
-            src="https://www.spacex.com/sites/spacex/files/multiplanetary_thumbnail.jpg"
-            class="card-img-top"
-          />
+          <img src="~/assets/img/news/NHQ.jpg" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p
@@ -54,11 +45,16 @@
 }
 .card {
   margin: 10px;
+  padding: 0;
 }
 
 .ournews {
   text-align: center;
   margin: 35px 0;
+}
+.card-img-top {
+  /* height: 250px; */
+  /* width: 100%; */
 }
 @media screen and (max-width: 768px) {
   .card {

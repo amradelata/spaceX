@@ -15,7 +15,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script :[
-      { src:"https://kit.fontawesome.com/9c831b27e0.js"}
+      { src:"https://kit.fontawesome.com/9c831b27e0.js"},
+      
     ]
   },
   /*
@@ -27,10 +28,12 @@ export default {
   */
   css: [
   ],
+  js: ['~/assets/js/main.js'],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+     
   ],
   /*
   ** Nuxt.js dev-modules
@@ -45,6 +48,7 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    
   ],
   /*
   ** Axios module configuration

@@ -1,61 +1,65 @@
 <template>
   <div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" ref="carouselimg">
-          <div
-            class="d-block w-100 imgslider"
-            style="background-image: url('https://www.spacex.com/sites/spacex/files/demo1_iss2_v2.jpg');"
-          ></div>
-        </div>
-        <div class="carousel-item active" ref="carouselimg">
-          <div
-            class="d-block w-100 imgslider"
-            style="background-image: url('https://www.spacex.com/sites/spacex/files/0000_mars_landing.jpg');"
-          ></div>
-        </div>
-      </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselExampleIndicators"
-        role="button"
-        data-slide="prev"
-        @click="toglleimg()"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselExampleIndicators"
-        role="button"
-        data-slide="next"
-        @click="toglleimg()"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+    <b-carousel
+      id="carousel-1"
+      v-model="slide"
+      :interval="4000"
+      controls
+      indicators
+      background="#ababab"
+      img-width="1024"
+      img-height="480"
+      style="text-shadow: 1px 1px 2px #333;"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+    >
+      <!-- Text slides with image -->
+      <!-- <b-carousel-slide
+        caption="First slide"
+        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+        img-src="https://www.spacex.com/sites/spacex/files/0000_mars_landing.jpg"
+      ></b-carousel-slide>-->
+
+      <!-- Slides with custom text -->
+      <b-carousel-slide img-src="~/assets/img/slider/home_feature.webp"></b-carousel-slide>
+
+      <!-- Slides with image only -->
+      <b-carousel-slide img-src="~/assets/img/slider/home_mission.webp"></b-carousel-slide>
+
+      <!-- Slides with img slot -->
+      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
+      <b-carousel-slide>
+        <template v-slot:img>
+          <img
+            class="d-block img-fluid w-100"
+            width="1024"
+            height="480"
+            src="~/assets/img/slider/home_moon.webp"
+            alt="image slot"
+          />
+        </template>
+      </b-carousel-slide>
+
+      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
+    </b-carousel>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      slide: 0,
+      sliding: null
+    }
+  },
   methods: {
-    toglleimg() {
-      this.$refs['carouselimg'].classList.toggle('active')
-      //   this.$refs['navbar-toggler'].classList.toggle('collapse')
+    onSlideStart(slide) {
+      this.sliding = true
+    },
+    onSlideEnd(slide) {
+      this.sliding = false
     }
   }
 }
 </script>
-
-
-
-<style scoped>
-.imgslider {
-  height: 70vh;
-  background-size: cover;
-  background-position: center center;
-}
-</style>

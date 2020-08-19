@@ -1,16 +1,19 @@
 <template>
   <div>
     <mynav />
+    <mypopup />
     <nuxt />
   </div>
 </template>
 
 <script>
 import mynav from '~/components/mynav.vue'
+import mypopup from '~/components/mypopup.vue'
 
 export default {
   components: {
-    mynav
+    mynav,
+    mypopup
   }
 }
 </script>
